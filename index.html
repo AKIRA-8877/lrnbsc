@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home Automation Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      text-align: center;
+      padding-top: 50px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .device {
+      margin: 20px;
+      padding: 20px;
+      background: #ffffff;
+      border: 2px solid #3498db;
+      border-radius: 10px;
+      display: inline-block;
+      width: 200px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🏠 Home Automation Panel</h1>
+
+  <div class="device">
+    <h2>Lights</h2>
+    <p id="lightStatus">Off</p>
+    <button onclick="toggle('lightStatus')">Toggle</button>
+  </div>
+
+  <div class="device">
+    <h2>Fan</h2>
+    <p id="fanStatus">Off</p>
+    <button onclick="toggle('fanStatus')">Toggle</button>
+  </div>
+
+  <div class="device">
+    <h2>Door Lock</h2>
+    <p id="doorStatus">Locked</p>
+    <button onclick="toggleDoor()">Lock/Unlock</button>
+  </div>
+
+  <script>
+    function toggle(id) {
+      const element = document.getElementById(id);
+      element.innerText = (element.innerText === "On") ? "Off" : "On";
+    }
+
+    function toggleDoor() {
+      const door = document.getElementById("doorStatus");
+      door.innerText = (door.innerText === "Locked") ? "Unlocked" : "Locked";
+    }
+  </script>
+
+</body>
+</html>
